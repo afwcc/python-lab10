@@ -1,8 +1,30 @@
-def recordnumber():
-    number = input("please enter the number between 1 to 24")
-    if number =="q":
-        quit(0)
-    elif number > 24:
-        input("please enter the number between 1 to 24")
+import sqlite3
+import base64
 
-recordnumber()
+con = sqlite3.connect('week10.db')
+c = con.cursor()
+i = 0
+
+a = ['','Brijesh','Yuanzhen Lin','Bing Yang','Vithura','Yong Shao','None','Patricia De Nardi','Chia Chin Chun','Jerome2','Radhika','Arash','Nikolai','Krishna'
+,'Nazar'
+,'Eduardo'
+,'Fernando'
+,'None'
+,'None'
+,'None'
+,'Pushwinder Kaur'
+,'None'
+,'None'
+,'None'
+,'None'
+,'Anusha'
+,'Milan']
+
+while i<26:
+    with con:
+        c.execute('UPDATE Lab10 SET Student = ? WHERE id = ?',(a[i],i))
+        i = i + 1
+
+
+
+
