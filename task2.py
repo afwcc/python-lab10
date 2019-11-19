@@ -8,7 +8,7 @@ query = "select id,link from lab10"
 result = c.execute(query)
 number = int(input("please enter"))
 while True:
-    if number>=1 and number<=24:
+    if number>=1 and number<=26:
         for r in result.fetchall():
             if r[0] == number:
                 dburl = base64.urlsafe_b64decode(r[1]).decode('utf-8')
